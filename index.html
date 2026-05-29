@@ -1,35 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Vizion Aurora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIZ·ION — Cellule Communication CCA</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue dans la gallerie photo</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallerie.html">Gallerie</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>A propos</h2>
-            <p>Vizion Aurora is a leading company in innovative technology solutions. We specialize in providing cutting-edge services to our clients worldwide.</p>
-        </section>
-        <section>
-            <h2>hero</h2>
-            <p> presentation de la mission aurora</p>
-        </section>
 
-    </main>
-    <footer>
-        <p>&copy; 2024 Vizion Aurora.</p>
-    </footer>
+<div class="stars"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">VIZ<span>·</span>ION</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#transmissions">Transmissions</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:1rem;">
+    <span class="nav-badge">● EN DIRECT</span>
+    <div class="hamburger" id="hamburger" onclick="document.getElementById('nav-links').classList.toggle('open')">
+  
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-tag">// CELLULE COMMUNICATION CCA — MISSION AURORA — 2079</p>
+  <h1 class="hero-title">OPÉRATION<br><span class="accent">AURORA</span></h1>
+  <p class="hero-subtitle">ODYSSEY IV · ORBITE KEPLER-452c · 2079</p>
+  <p class="hero-desc">
+    L'humanité a posé les yeux sur un nouveau monde. À 1 400 années-lumière de la Terre, l'Odyssey IV est en orbite autour de Kepler-452c. La cellule VIZ·ION est la voix officielle de cette mission historique.
+  </p>
+  <a href="#mission" class="hero-cta">DÉCOUVRIR LA MISSION</a>
+    <a href="galerie.html" class="hero-cta">DÉCOUVRIR LA GALERIE</a>
+
+  
+</div>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-item">
+    <span class="stat-value cyan">1 400</span>
+    <span class="stat-label">Années-lumière</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">18</span>
+    <span class="stat-label">Mois de voyage</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value purple">6</span>
+    <span class="stat-label">Astronautes</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value cyan">8 Mrd</span>
+    <span class="stat-label">Témoins sur Terre</span>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section id="mission">
+  <p class="section-label">01 // MISSION AURORA</p>
+  <h2 class="section-title">La première mission<br>interstellaire habitée</h2>
+
+  <div class="mission-grid">
+    <div class="mission-card">
+      <p class="mission-card-num">2047</p>
+      <h3>La découverte</h3>
+      <p>Les télescopes de nouvelle génération détectent des signatures atmosphériques inhabituelles sur Kepler-452c, exoplanète rocheuse dans la zone habitable de son étoile.</p>
+    </div>
+    <div class="mission-card purple">
+      <p class="mission-card-num">2058 — 2071</p>
+      <h3>La construction</h3>
+      <p>L'Agence Spatiale Internationale lance le Programme AURORA. En 13 ans, l'Odyssey IV est construit en orbite terrestre — 340 mètres de technologie de pointe.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-card-num">2077 — 2079</p>
+      <h3>Le voyage</h3>
+      <p>Après 5 ans de sélection et d'entraînement intensif, 6 astronautes choisis parmi 12 000 candidats décollent. 18 mois plus tard, l'Odyssey IV arrive en orbite.</p>
+    </div>
+  </div>
+
+  <div class="quote-block" style="margin-top:3rem;">
+    <p class="quote-text">« Nous avons construit le vaisseau le plus sophistiqué de l'histoire de l'humanité. Mais sans mots, sans images, sans histoire — tout cela reste invisible. Votre cellule est le pont entre les étoiles et la Terre. »</p>
+    <p class="quote-author">— DIRECTEUR JULIEN.L · CENTRE DE CONTRÔLE AURORA</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- À PROPOS -->
+<section id="apropos">
+  <p class="section-label">02 // À PROPOS</p>
+  <h2 class="section-title">La cellule VIZ·ION</h2>
+
+  <p class="about-intro">
+    Unité de communication officielle du Centre de Contrôle Aurora, la cellule VIZ·ION assure ce que les ingénieurs ne peuvent pas calculer : le lien entre l'extraordinaire et les 8 milliards de personnes qui attendent des nouvelles. Transformer des données brutes en récit. Faire de la science une émotion.
+  </p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">MB</div>
+      <p class="team-name">MATHIS B.</p>
+      <p class="team-role">Stratégie & Coord.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">MC</div>
+      <p class="team-name">MARINA C.</p>
+      <p class="team-role">Communication digitale</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">AR</div>
+      <p class="team-name">ANDRÉA R.</p>
+      <p class="team-role">Direction artistique</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">MR</div>
+      <p class="team-name">MAUDE R.</p>
+      <p class="team-role">Rédaction & Presse</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">LB</div>
+      <p class="team-name">LAUREEN B.</p>
+      <p class="team-role">Vidéo & Multimédia</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRANSMISSIONS -->
+<section id="transmissions">
+  <p class="section-label">03 // TRANSMISSIONS</p>
+  <h2 class="section-title">Dernières transmissions</h2>
+
+  <div class="transmission-list">
+    <div class="transmission-card">
+      <div>
+        <div class="transmission-meta">
+          <span class="badge-new">NOUVEAU</span>
+          <span class="transmission-ref">CP-AURORA-003 · 25.05.2079</span>
+        </div>
+        <p class="transmission-title">Premières images HD de Kepler-452c reçues</p>
+        <p class="transmission-desc">Le CCA confirme la réception des premières images haute résolution transmises depuis l'Odyssey IV.</p>
+      </div>
+      <a href="#" class="transmission-link">LIRE →</a>
+    </div>
+
+    <div class="transmission-card purple">
+      <div>
+        <div class="transmission-meta">
+          <span class="transmission-ref">CP-AURORA-002 · 25.05.2079</span>
+        </div>
+        <p class="transmission-title">L'Odyssey IV entre en orbite autour de Kepler-452c</p>
+        <p class="transmission-desc">Après 18 mois de voyage interstellaire, le vaisseau confirme son orbite stable. Les premières transmissions débutent.</p>
+      </div>
+      <a href="#" class="transmission-link">LIRE →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-logo">VIZ<span>·</span>ION</p>
+      <p class="footer-tagline">Cellule communication officielle du Centre de Contrôle Aurora — Mission AURORA 2079.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">ÉQUIPE</p>
+      <ul>
+        <li>Mathis Beaussier</li>
+        <li>Marina Chea</li>
+        <li>Andréa Rivière-Jour</li>
+        <li>Maude Roy-Flament</li>
+        <li>Laureen Bertrand</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">MISSION</p>
+      <ul>
+        <li>Programme AURORA</li>
+        <li>Odyssey IV</li>
+        <li>Kepler-452c</li>
+        <li>CCA — 2079</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>VIZ·ION // CCA // MISSION AURORA // 2079 — DIFFUSION RESTREINTE</p>
+    <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+  </div>
+</footer>
+
 </body>
+</html>
