@@ -806,6 +806,26 @@ footer {
   margin: 0 auto;
 }
 
+/* ─── ESPACE MISES À JOUR ─── */
+.updates-placeholder {
+  min-height: 180px;
+  padding: 2rem;
+  border: 1px dashed rgba(68, 196, 226, 0.25);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(13, 27, 42, 0.9), rgba(7, 11, 20, 0.95));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.updates-placeholder-text {
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 640px) {
   .navbar-menu-links {
