@@ -7,6 +7,7 @@ const alertStatusLine = document.getElementById('alert-status-line');
 const alertBadge = document.getElementById('alert-badge');
 const alertToggle = document.getElementById('alert-mode-toggle');
 
+
 const alertStates = {
   confidentiel: ['Signal anormal détecté', 'Canal principal instable, validation en cours avant diffusion.', 'CONFIDENTIEL', 'Passer en public'],
   public: ['Signal validé pour diffusion', 'Le flux est stabilisé et prêt à être partagé à l’extérieur.', 'PUBLIC', 'Revenir en confidentiel'],
