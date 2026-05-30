@@ -101,7 +101,7 @@ nav {
   list-style: none;
 }
 
-.navbar-menu-links a {
+.navbar-menu-links a{
   font-family: "Orbitron", monospace;
   font-size: 11px;
   letter-spacing: 0.15em;
@@ -110,6 +110,8 @@ nav {
   text-transform: uppercase;
   transition: color 0.2s;
 }
+
+
 .navbar-menu-links a:hover {
   color: var(--cyan);
 }

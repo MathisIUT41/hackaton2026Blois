@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIZ·ION — Journal de bord</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="journal.css" />
+  </head>
+  <body>
+    <div class="bg-starfield"></div>
+
+    <nav id="nav">
+      <a href="index.html" class="navbar-brand-logo">VIZ<span>·</span>ION</a>
+      <ul class="navbar-menu-links" id="navbar-menu-links">
+        <li><a href="journal.html" style="color: var(--cyan)">Journal</a></li>
+        <li><a href="index.html#mission">Mission</a></li>
+        <li><a href="index.html#equipage">Équipage</a></li>
+        <li><a href="index.html#transmissions">Transmissions</a></li>
+        
+        
+      </ul>
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <span class="navbar-live-badge">● EN DIRECT</span>
+        <div
+          class="navbar-hamburger-btn"
+          id="hamburger"
+          onclick="document.getElementById('navbar-menu-links').classList.toggle('open')"
+        >
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="journal-hero">
+      <div class="journal-hero-meta">
+        <span class="journal-status-global">● SYSTÈME NOMINAL</span>
+        <span class="journal-ref">JDB-AURORA-2079 // CELLULE VIZION</span>
+      </div>
+      <h1>Journal de bord<br />technique</h1>
+      <p>
+        Registre officiel des incidents techniques survenus durant la Mission AURORA.
+        Chaque entrée est horodatée, classifiée par niveau de gravité et documentée
+        jusqu'à résolution complète. Mis à jour en temps réel par la cellule VIZ·ION.
+      </p>
+    </div>
+
+    <div class="journal-filters">
+      <button class="filter-btn active" onclick="filtrer('tous', this)">TOUS</button>
+      <button class="filter-btn" onclick="filtrer('haute', this)">HAUTE</button>
+      <button class="filter-btn" onclick="filtrer('moyenne', this)">MOYENNE</button>
+      <button class="filter-btn" onclick="filtrer('faible', this)">FAIBLE</button>
+      <button class="filter-btn" onclick="filtrer('en-cours', this)">EN COURS</button>
+      <button class="filter-btn" onclick="filtrer('resolu', this)">RÉSOLU</button>
+    </div>
+
+    <div class="journal-section">
+      <p class="journal-count">
+        <span id="count">2</span> INCIDENT(S) ENREGISTRÉ(S)
+      </p>
+
+      <div class="journal-table-header">
+        <span>DATE / HEURE</span>
+        <span>INCIDENT</span>
+        <span>GRAVITÉ</span>
+        <span>STATUT</span>
+        <span>RAPPORTEUR</span>
+      </div>
+
+      <div class="incident-card" data-gravite="moyenne" data-statut="resolu">
+        <div class="incident-datetime">
+          <strong>25.05.2079</strong>
+          14:32 UTC
+        </div>
+        <div class="incident-details">
+          <p class="incident-title">Anomalie module communication principal</p>
+          <p class="incident-desc">
+            Perte de signal intermittente détectée sur l'antenne directionnelle
+            de l'Odyssey IV. Les transmissions vers le CCA ont été interrompues
+            pendant 35 minutes. Aucun impact sur les systèmes de navigation
+            ou de survie.
+          </p>
+          <p class="incident-resolution">
+            ✓ Résolution 15:07 UTC — Recalibrage de l'antenne directionnelle
+            effectué. Signal stable rétabli à 98,7% de capacité nominale.
+          </p>
+        </div>
+        <div>
+          <span class="badge-gravite badge-moyenne">MOYENNE</span>
+        </div>
+        <div>
+          <span class="badge-statut badge-resolu">✓ RÉSOLU</span>
+        </div>
+        <div class="incident-rapporteur">
+          <strong>SPC. N. DAVIS</strong>
+          Officier communications
+        </div>
+      </div>
+
+      <div class="incident-card" data-gravite="faible" data-statut="resolu">
+        <div class="incident-datetime">
+          <strong>25.05.2079</strong>
+          09:14 UTC
+        </div>
+        <div class="incident-details">
+          <p class="incident-title">Fluctuation capteurs atmosphériques</p>
+          <p class="incident-desc">
+            Légère instabilité relevée sur les capteurs d'analyse atmosphérique
+            de surface. Les données collectées sur Kepler-452c ont affiché des
+            valeurs aberrantes durant 12 minutes avant correction automatique.
+          </p>
+          <p class="incident-resolution">
+            ✓ Résolution 09:26 UTC — Réinitialisation du module de traitement
+            des données capteurs. Calibration automatique validée par Dr. Patel.
+          </p>
+        </div>
+        <div>
+          <span class="badge-gravite badge-faible">FAIBLE</span>
+        </div>
+        <div>
+          <span class="badge-statut badge-resolu">✓ RÉSOLU</span>
+        </div>
+        <div class="incident-rapporteur">
+          <strong>DR. S. PATEL</strong>
+          Chef scientifique
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="footer-content-grid">
+        <div>
+          <p class="footer-brand-logo-text">VIZ<span>·</span>ION</p>
+          <p class="footer-brand-description">
+            Cellule communication officielle du Centre de Contrôle Aurora —
+            Mission AURORA 2079.
+          </p>
+        </div>
+        <div class="footer-nav-column">
+          <p class="footer-column-heading">NAVIGATION</p>
+          <ul>
+            <li><a href="index.html" style="color:var(--gray); text-decoration:none;">Accueil</a></li>
+            <li><a href="index.html#mission" style="color:var(--gray); text-decoration:none;">Mission</a></li>
+            <li><a href="index.html#transmissions" style="color:var(--gray); text-decoration:none;">Transmissions</a></li>
+            <li><a href="journal.html" style="color:var(--cyan); text-decoration:none;">Journal de bord</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-column">
+          <p class="footer-column-heading">MISSION</p>
+          <ul>
+            <li>Programme AURORA</li>
+            <li>Odyssey IV</li>
+            <li>Kepler-452c</li>
+            <li>CCA — 2079</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal-bar">
+        <p>VIZ·ION // CCA // MISSION AURORA // 2079 — DIFFUSION RESTREINTE</p>
+        <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+      </div>
+    </footer>
+
+    <script src="journal.js"></script>
+  </body>
+</html>

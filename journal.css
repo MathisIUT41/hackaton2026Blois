@@ -1,0 +1,276 @@
+
+
+      .journal-hero {
+        position: relative;
+        z-index: 1;
+        padding: 120px 2rem 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(68, 196, 226, 0.15);
+      }
+
+      .journal-hero-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .journal-status-global {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        padding: 4px 12px;
+        border-radius: 2px;
+        border: 1px solid var(--cyan);
+        color: var(--cyan);
+        background: rgba(68, 196, 226, 0.08);
+        animation: pulse 2s infinite;
+      }
+
+      .journal-ref {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        color: var(--gray);
+      }
+
+      .journal-hero h1 {
+        font-family: "Orbitron", monospace;
+        font-weight: 900;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        color: var(--white);
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+      }
+
+      .journal-hero p {
+        font-size: 14px;
+        color: var(--gray);
+        line-height: 1.7;
+        max-width: 600px;
+      }
+
+      /* ─── FILTRES ─── */
+      .journal-filters {
+        position: relative;
+        z-index: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 2rem 0;
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        padding: 6px 14px;
+        border-radius: 2px;
+        border: 1px solid rgba(68, 196, 226, 0.2);
+        background: transparent;
+        color: var(--gray);
+        cursor: pointer;
+        transition: all 0.2s;
+        text-transform: uppercase;
+      }
+      .filter-btn:hover,
+      .filter-btn.active {
+        border-color: var(--cyan);
+        color: var(--cyan);
+        background: rgba(68, 196, 226, 0.08);
+      }
+
+      /* ─── TABLEAU ─── */
+      .journal-section {
+        position: relative;
+        z-index: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 2rem 5rem;
+      }
+
+      .journal-count {
+        font-family: "Orbitron", monospace;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+      }
+      .journal-count span { color: var(--cyan); }
+
+      .journal-table-header {
+        display: grid;
+        grid-template-columns: 140px 1fr 100px 110px 110px;
+        gap: 1rem;
+        padding: 0.75rem 1.25rem;
+        background: var(--bg-section);
+        border-radius: 4px 4px 0 0;
+        border: 1px solid rgba(68, 196, 226, 0.15);
+        border-bottom: none;
+      }
+
+      .journal-table-header span {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        color: var(--cyan);
+        text-transform: uppercase;
+      }
+
+      /* ─── INCIDENT CARD ─── */
+      .incident-card {
+        display: grid;
+        grid-template-columns: 140px 1fr 100px 110px 110px;
+        gap: 1rem;
+        align-items: start;
+        padding: 1.25rem;
+        background: var(--bg-card);
+        border: 1px solid rgba(68, 196, 226, 0.1);
+        border-top: none;
+        transition: background 0.2s;
+      }
+      .incident-card:last-child {
+        border-radius: 0 0 4px 4px;
+      }
+      .incident-card:hover {
+        background: rgba(13, 27, 42, 0.9);
+      }
+      .incident-card + .incident-card {
+        border-top: 1px solid rgba(68, 196, 226, 0.06);
+      }
+
+      .incident-datetime {
+        font-family: "Orbitron", monospace;
+        font-size: 10px;
+        color: var(--gray);
+        line-height: 1.6;
+      }
+      .incident-datetime strong {
+        display: block;
+        color: var(--white);
+        font-size: 11px;
+      }
+
+      .incident-details {}
+      .incident-title {
+        font-family: "Orbitron", monospace;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 4px;
+        line-height: 1.4;
+      }
+      .incident-desc {
+        font-size: 12px;
+        color: var(--gray);
+        line-height: 1.6;
+      }
+      .incident-resolution {
+        margin-top: 8px;
+        font-size: 11px;
+        color: rgba(68, 196, 226, 0.7);
+        border-left: 2px solid rgba(68, 196, 226, 0.3);
+        padding-left: 8px;
+        line-height: 1.5;
+      }
+
+      /* ─── BADGES GRAVITÉ ─── */
+      .badge-gravite {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        padding: 4px 10px;
+        border-radius: 2px;
+        text-align: center;
+        display: inline-block;
+      }
+      .badge-faible {
+        color: #4ade80;
+        background: rgba(74, 222, 128, 0.08);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+      }
+      .badge-moyenne {
+        color: #fbbf24;
+        background: rgba(251, 191, 36, 0.08);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
+      .badge-haute {
+        color: #f87171;
+        background: rgba(248, 113, 113, 0.08);
+        border: 1px solid rgba(248, 113, 113, 0.3);
+      }
+
+      /* ─── BADGES STATUT ─── */
+      .badge-statut {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        padding: 4px 10px;
+        border-radius: 2px;
+        text-align: center;
+        display: inline-block;
+      }
+      .badge-resolu {
+        color: #4ade80;
+        background: rgba(74, 222, 128, 0.08);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+      }
+      .badge-en-cours {
+        color: #fbbf24;
+        background: rgba(251, 191, 36, 0.08);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+        animation: pulse 2s infinite;
+      }
+      .badge-surveille {
+        color: var(--purple-l);
+        background: rgba(167, 139, 250, 0.08);
+        border: 1px solid rgba(167, 139, 250, 0.3);
+      }
+
+      .incident-rapporteur {
+        font-family: "Orbitron", monospace;
+        font-size: 9px;
+        color: var(--gray);
+        line-height: 1.6;
+      }
+      .incident-rapporteur strong {
+        display: block;
+        color: var(--purple-l);
+        font-size: 10px;
+        margin-bottom: 2px;
+      }
+
+      /* ─── EMPTY STATE ─── */
+      .journal-empty {
+        text-align: center;
+        padding: 4rem 2rem;
+        border: 1px solid rgba(68, 196, 226, 0.1);
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        background: var(--bg-card);
+      }
+      .journal-empty p {
+        font-family: "Orbitron", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--gray);
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 768px) {
+        .journal-table-header { display: none; }
+        .incident-card {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+          border-radius: 4px;
+          border: 1px solid rgba(68, 196, 226, 0.1) !important;
+          margin-bottom: 12px;
+        }
+        .incident-card + .incident-card { border-top: 1px solid rgba(68, 196, 226, 0.1); }
+        .journal-section { padding: 2rem 1.25rem 3rem; }
+      }
+    
