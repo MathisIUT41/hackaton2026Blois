@@ -1,308 +1,323 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VIZ·ION — Cellule Communication CCA</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <header>
-      <div class="bg-starfield"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIZ·ION — Cellule Communication CCA</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-      <nav id="nav">
-        <a href="#" class="navbar-brand-logo">VIZ<span>·</span>ION</a>
-        <ul class="navbar-menu-links" id="navbar-menu-links">
-          <li><a href="journal.html">Journal</a></li>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#apropos">À propos</a></li>
-          <li><a href="#transmissions">Transmissions</a></li>
-        </ul>
-        <div style="display: flex; align-items: center; gap: 1rem">
-          <span class="navbar-live-badge">● EN DIRECT</span>
-          <div
-            class="navbar-hamburger-btn"
-            id="hamburger"
-            onclick="
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <header>
+    <div class="bg-starfield"></div>
+
+    <nav id="nav">
+      <a href="#" class="navbar-brand-logo">VIZ<span>·</span>ION</a>
+      <ul class="navbar-menu-links" id="navbar-menu-links">
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#transmissions">Transmissions</a></li>
+      </ul>
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <span class="navbar-live-badge">● EN DIRECT</span>
+        <div class="navbar-hamburger-btn" id="hamburger" onclick="
               document
                 .getElementById('navbar-menu-links')
                 .classList.toggle('open')
-            "
-          >
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-      </nav>
+            ">
 
-      <div class="hero">
-        <p class="hero-eyebrow-label">
-          // CELLULE COMMUNICATION CCA — MISSION AURORA — 2079
-        </p>
-        <h1 class="hero-main-title">
-          OPÉRATION<br /><span class="text-cyan-accent">AURORA</span>
-        </h1>
-        <p class="hero-mission-subtitle">
-          ODYSSEY IV · ORBITE KEPLER-452c · 2079
-        </p>
-        <p class="hero-description-text">
-          L'humanité a posé les yeux sur un nouveau monde. À 1 400
-          années-lumière de la Terre, l'Odyssey IV est en orbite autour de
-          Kepler-452c. La cellule VIZ·ION est la voix officielle de cette
-          mission historique.
-        </p>
-        <div class="hero-buttons-wrapper">
-          <a href="#mission" class="hero-cta-button">DÉCOUVRIR LA MISSION</a>
-          <a href="galerie.html" class="hero-cta-button"
-            >DÉCOUVRIR LA GALERIE</a
-          >
+        </div>
+
+        <span></span><span></span><span></span>
+
+      </div>
+
+      </div>
+
+    </nav>
+    <!-- Bannière d'alerte (plein largeur, placée sous la nav) -->
+    <div class="alert-header alert-banner">
+      <div class="alert-header-left">
+        <div class="alert-indicator">
+          <div class="alert-indicator-dot"></div>
+        </div>
+        <div class="alert-titles">
+          <p class="alert-eyebrow">04 // DERNIÈRE ALERTE · SIG-07</p>
+          <h3 class="alert-main-title" id="alert-title">
+            Signal anormal détecté
+          </h3>
+        </div>
+      </div>
+      <span class="alert-status-badge confidentiel" id="alert-badge">● CONFIDENTIEL</span>
+    </div>
+
+    <div class="hero">
+      <p class="hero-eyebrow-label">
+        // CELLULE COMMUNICATION CCA — MISSION AURORA — 2079
+      </p>
+      <h1 class="hero-main-title">
+        OPÉRATION<br /><span class="text-cyan-accent">AURORA</span>
+      </h1>
+      <p class="hero-mission-subtitle">
+        ODYSSEY IV · ORBITE KEPLER-452c · 2079
+      </p>
+      <p class="hero-description-text">
+        L'humanité a posé les yeux sur un nouveau monde. À 1 400
+        années-lumière de la Terre, l'Odyssey IV est en orbite autour de
+        Kepler-452c. La cellule VIZ·ION est la voix officielle de cette
+        mission historique.
+      </p>
+      <div class="hero-buttons-wrapper">
+        <a href="#mission" class="hero-cta-button">DÉCOUVRIR LA MISSION</a>
+        <a href="galerie.html" class="hero-cta-button">DÉCOUVRIR LA GALERIE</a>
+      </div>
+    </div>
+
+    <div class="stats-ribbon-bar">
+      <div class="stats-ribbon-cell">
+        <span class="stats-big-number color-cyan">1 400</span>
+        <span class="stats-caption-text">Années-lumière</span>
+      </div>
+      <div class="stats-ribbon-cell">
+        <span class="stats-big-number">18</span>
+        <span class="stats-caption-text">Mois de voyage</span>
+      </div>
+      <div class="stats-ribbon-cell">
+        <span class="stats-big-number color-purple">6</span>
+        <span class="stats-caption-text">Astronautes</span>
+      </div>
+      <div class="stats-ribbon-cell">
+        <span class="stats-big-number color-cyan">8 Mrd</span>
+        <span class="stats-caption-text">Témoins sur Terre</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="mission">
+      <p class="section-eyebrow-label">01 // MISSION AURORA</p>
+      <h2 class="section-main-heading">
+        La première mission<br />interstellaire habitée
+      </h2>
+
+      <div class="mission-timeline-grid">
+        <div class="mission-timeline-card">
+          <p class="mission-card-period">2047</p>
+          <h3>La découverte</h3>
+          <p>
+            Les télescopes de nouvelle génération détectent des signatures
+            atmosphériques inhabituelles sur Kepler-452c, exoplanète rocheuse
+            dans la zone habitable de son étoile.
+          </p>
+        </div>
+        <div class="mission-timeline-card color-purple">
+          <p class="mission-card-period">2058 — 2071</p>
+          <h3>La construction</h3>
+          <p>
+            L'Agence Spatiale Internationale lance le Programme AURORA. En 13
+            ans, l'Odyssey IV est construit en orbite terrestre — 340 mètres
+            de technologie de pointe.
+          </p>
+        </div>
+        <div class="mission-timeline-card">
+          <p class="mission-card-period">2077 — 2079</p>
+          <h3>Le voyage</h3>
+          <p>
+            Après 5 ans de sélection et d'entraînement intensif, 6 astronautes
+            choisis parmi 12 000 candidats décollent. 18 mois plus tard,
+            l'Odyssey IV arrive en orbite.
+          </p>
         </div>
       </div>
 
-      <div class="stats-ribbon-bar">
-        <div class="stats-ribbon-cell">
-          <span class="stats-big-number color-cyan">1 400</span>
-          <span class="stats-caption-text">Années-lumière</span>
+      <div class="director-quote-block" style="margin-top: 3rem">
+        <p class="director-quote-body">
+          « Nous avons construit le vaisseau le plus sophistiqué de l'histoire
+          de l'humanité. Mais sans mots, sans images, sans histoire — tout
+          cela reste invisible. Votre cellule est le pont entre les étoiles et
+          la Terre. »
+        </p>
+        <p class="director-quote-attribution">
+          — DIRECTEUR JULIEN.L · CENTRE DE CONTRÔLE AURORA
+        </p>
+      </div>
+    </section>
+
+    <div class="section-horizontal-divider"></div>
+
+    <section id="apropos">
+      <p class="section-eyebrow-label">02 // À PROPOS</p>
+      <h2 class="section-main-heading">L'équipage de l'Odyssey IV</h2>
+
+      <p class="about-intro-lead">
+        6 astronautes sélectionnés parmi 12 000 candidats. Des scientifiques,
+        des ingénieurs, des explorateurs. À bord de l'Odyssey IV, ils
+        représentent l'humanité entière à 1 400 années-lumière de la Terre —
+        et c'est leur mission que la cellule VIZ·ION a pour rôle de raconter
+        au monde.
+      </p>
+
+      <div class="team-members-grid">
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">ER</div>
+          <p class="team-member-fullname">CDT. E. RIPLEY</p>
+          <p class="team-member-job-title">Commandante de mission</p>
         </div>
-        <div class="stats-ribbon-cell">
-          <span class="stats-big-number">18</span>
-          <span class="stats-caption-text">Mois de voyage</span>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">SP</div>
+          <p class="team-member-fullname">DR. S. PATEL</p>
+          <p class="team-member-job-title">Chef scientifique</p>
         </div>
-        <div class="stats-ribbon-cell">
-          <span class="stats-big-number color-purple">6</span>
-          <span class="stats-caption-text">Astronautes</span>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">AL</div>
+          <p class="team-member-fullname">LT. A. LAURENT</p>
+          <p class="team-member-job-title">Pilote EVA</p>
         </div>
-        <div class="stats-ribbon-cell">
-          <span class="stats-big-number color-cyan">8 Mrd</span>
-          <span class="stats-caption-text">Témoins sur Terre</span>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">TW</div>
+          <p class="team-member-fullname">SPC. T. WONG</p>
+          <p class="team-member-job-title">Ingénieure de bord</p>
+        </div>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">ES</div>
+          <p class="team-member-fullname">DR. E. SILVA</p>
+          <p class="team-member-job-title">Médecin de bord</p>
+        </div>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">ND</div>
+          <p class="team-member-fullname">SPC. N. DAVIS</p>
+          <p class="team-member-job-title">Officier communications</p>
         </div>
       </div>
-    </header>
-    <main>
-      <section id="mission">
-        <p class="section-eyebrow-label">01 // MISSION AURORA</p>
-        <h2 class="section-main-heading">
-          La première mission<br />interstellaire habitée
-        </h2>
+    </section>
 
-        <div class="mission-timeline-grid">
-          <div class="mission-timeline-card">
-            <p class="mission-card-period">2047</p>
-            <h3>La découverte</h3>
-            <p>
-              Les télescopes de nouvelle génération détectent des signatures
-              atmosphériques inhabituelles sur Kepler-452c, exoplanète rocheuse
-              dans la zone habitable de son étoile.
-            </p>
-          </div>
-          <div class="mission-timeline-card color-purple">
-            <p class="mission-card-period">2058 — 2071</p>
-            <h3>La construction</h3>
-            <p>
-              L'Agence Spatiale Internationale lance le Programme AURORA. En 13
-              ans, l'Odyssey IV est construit en orbite terrestre — 340 mètres
-              de technologie de pointe.
-            </p>
-          </div>
-          <div class="mission-timeline-card">
-            <p class="mission-card-period">2077 — 2079</p>
-            <h3>Le voyage</h3>
-            <p>
-              Après 5 ans de sélection et d'entraînement intensif, 6 astronautes
-              choisis parmi 12 000 candidats décollent. 18 mois plus tard,
-              l'Odyssey IV arrive en orbite.
-            </p>
-          </div>
+    <div class="section-horizontal-divider"></div>
+
+    <section id="apropos">
+      <p class="section-eyebrow-label">02 // À PROPOS</p>
+      <h2 class="section-main-heading">La cellule VIZ·ION</h2>
+
+      <p class="about-intro-lead">
+        Unité de communication officielle du Centre de Contrôle Aurora, la
+        cellule VIZ·ION assure ce que les ingénieurs ne peuvent pas calculer :
+        le lien entre l'extraordinaire et les 8 milliards de personnes qui
+        attendent des nouvelles. Transformer des données brutes en récit.
+        Faire de la science une émotion.
+      </p>
+
+      <div class="team-members-grid">
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">MB</div>
+          <p class="team-member-fullname">MATHIS B.</p>
+          <p class="team-member-job-title">Stratégie & Coord.</p>
         </div>
-
-        <div class="director-quote-block" style="margin-top: 3rem">
-          <p class="director-quote-body">
-            « Nous avons construit le vaisseau le plus sophistiqué de l'histoire
-            de l'humanité. Mais sans mots, sans images, sans histoire — tout
-            cela reste invisible. Votre cellule est le pont entre les étoiles et
-            la Terre. »
-          </p>
-          <p class="director-quote-attribution">
-            — DIRECTEUR JULIEN.L · CENTRE DE CONTRÔLE AURORA
-          </p>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">MC</div>
+          <p class="team-member-fullname">MARINA C.</p>
+          <p class="team-member-job-title">Communication digitale</p>
         </div>
-      </section>
-
-      <div class="section-horizontal-divider"></div>
-
-      <section id="apropos">
-        <p class="section-eyebrow-label">02 // À PROPOS</p>
-        <h2 class="section-main-heading">L'équipage de l'Odyssey IV</h2>
-
-        <p class="about-intro-lead">
-          6 astronautes sélectionnés parmi 12 000 candidats. Des scientifiques,
-          des ingénieurs, des explorateurs. À bord de l'Odyssey IV, ils
-          représentent l'humanité entière à 1 400 années-lumière de la Terre —
-          et c'est leur mission que la cellule VIZ·ION a pour rôle de raconter
-          au monde.
-        </p>
-
-        <div class="team-members-grid">
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">ER</div>
-            <p class="team-member-fullname">CDT. E. RIPLEY</p>
-            <p class="team-member-job-title">Commandante de mission</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">SP</div>
-            <p class="team-member-fullname">DR. S. PATEL</p>
-            <p class="team-member-job-title">Chef scientifique</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">AL</div>
-            <p class="team-member-fullname">LT. A. LAURENT</p>
-            <p class="team-member-job-title">Pilote EVA</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">TW</div>
-            <p class="team-member-fullname">SPC. T. WONG</p>
-            <p class="team-member-job-title">Ingénieure de bord</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">ES</div>
-            <p class="team-member-fullname">DR. E. SILVA</p>
-            <p class="team-member-job-title">Médecin de bord</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">ND</div>
-            <p class="team-member-fullname">SPC. N. DAVIS</p>
-            <p class="team-member-job-title">Officier communications</p>
-          </div>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">AR</div>
+          <p class="team-member-fullname">ANDRÉA R.J</p>
+          <p class="team-member-job-title">Direction artistique</p>
         </div>
-      </section>
-
-      <div class="section-horizontal-divider"></div>
-
-      <section id="apropos">
-        <p class="section-eyebrow-label">02 // À PROPOS</p>
-        <h2 class="section-main-heading">La cellule VIZ·ION</h2>
-
-        <p class="about-intro-lead">
-          Unité de communication officielle du Centre de Contrôle Aurora, la
-          cellule VIZ·ION assure ce que les ingénieurs ne peuvent pas calculer :
-          le lien entre l'extraordinaire et les 8 milliards de personnes qui
-          attendent des nouvelles. Transformer des données brutes en récit.
-          Faire de la science une émotion.
-        </p>
-
-        <div class="team-members-grid">
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">MB</div>
-            <p class="team-member-fullname">MATHIS B.</p>
-            <p class="team-member-job-title">Stratégie & Coord.</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">MC</div>
-            <p class="team-member-fullname">MARINA C.</p>
-            <p class="team-member-job-title">Communication digitale</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">AR</div>
-            <p class="team-member-fullname">ANDRÉA R.J</p>
-            <p class="team-member-job-title">Direction artistique</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">MRF</div>
-            <p class="team-member-fullname">MAUDE R.F</p>
-            <p class="team-member-job-title">Rédaction & Presse</p>
-          </div>
-          <div class="team-member-card">
-            <div class="team-member-initials-badge">LB</div>
-            <p class="team-member-fullname">LAUREEN B.</p>
-            <p class="team-member-job-title">Vidéo & Multimédia</p>
-          </div>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">MRF</div>
+          <p class="team-member-fullname">MAUDE R.F</p>
+          <p class="team-member-job-title">Rédaction & Presse</p>
         </div>
-      </section>
+        <div class="team-member-card">
+          <div class="team-member-initials-badge">LB</div>
+          <p class="team-member-fullname">LAUREEN B.</p>
+          <p class="team-member-job-title">Vidéo & Multimédia</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="section-horizontal-divider"></div>
+    <div class="section-horizontal-divider"></div>
 
-      <section id="transmissions">
-        <p class="section-eyebrow-label">03 // TRANSMISSIONS</p>
-        <h2 class="section-main-heading">Dernières transmissions</h2>
+    <section id="transmissions">
+      <p class="section-eyebrow-label">03 // TRANSMISSIONS</p>
+      <h2 class="section-main-heading">Dernières transmissions</h2>
 
-        <div class="transmissions-feed-list">
-          <div class="transmission-news-card">
-            <div>
-              <div class="transmission-card-header">
-                <span class="badge-nouveaute">NOUVEAU</span>
-                <span class="transmission-reference-code"
-                  >CP-AURORA-003 · 25.05.2079</span
-                >
-              </div>
-              <p class="transmission-card-title">
-                Premières images HD de Kepler-452c reçues
-              </p>
-              <p class="transmission-card-description">
-                Le CCA confirme la réception des premières images haute
-                résolution transmises depuis l'Odyssey IV.
-              </p>
+      <div class="transmissions-feed-list">
+        <div class="transmission-news-card">
+          <div>
+            <div class="transmission-card-header">
+              <span class="badge-nouveaute">NOUVEAU</span>
+              <span class="transmission-reference-code">CP-AURORA-003 · 25.05.2079</span>
             </div>
-            <a href="#" class="btn-lire-transmission">LIRE →</a>
+            <p class="transmission-card-title">
+              Premières images HD de Kepler-452c reçues
+            </p>
+            <p class="transmission-card-description">
+              Le CCA confirme la réception des premières images haute
+              résolution transmises depuis l'Odyssey IV.
+            </p>
           </div>
+          <a href="#" class="btn-lire-transmission">LIRE →</a>
+        </div>
 
-          <div class="transmission-news-card color-purple">
-            <div>
-              <div class="transmission-card-header">
-                <span class="transmission-reference-code">
-                  CP-AURORA-002 · 25.05.2079
-                </span>
-              </div>
-              <p class="transmission-card-title">
-                L'Odyssey IV entre en orbite autour de Kepler-452c
-              </p>
-              <p class="transmission-card-description">
-                Après 18 mois de voyage interstellaire, le vaisseau confirme son
-                orbite stable. Les premières transmissions débutent.
-              </p>
+        <div class="transmission-news-card color-purple">
+          <div>
+            <div class="transmission-card-header">
+              <span class="transmission-reference-code">
+                CP-AURORA-002 · 25.05.2079
+              </span>
             </div>
-            <a href="#" class="btn-lire-transmission">LIRE →</a>
+            <p class="transmission-card-title">
+              L'Odyssey IV entre en orbite autour de Kepler-452c
+            </p>
+            <p class="transmission-card-description">
+              Après 18 mois de voyage interstellaire, le vaisseau confirme son
+              orbite stable. Les premières transmissions débutent.
+            </p>
           </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="footer-content-grid">
-        <div>
-          <p class="footer-brand-logo-text">VIZ<span>·</span>ION</p>
-          <p class="footer-brand-description">
-            Cellule communication officielle du Centre de Contrôle Aurora —
-            Mission AURORA 2079.
-          </p>
-        </div>
-        <div class="footer-nav-column">
-          <p class="footer-column-heading">ÉQUIPE</p>
-          <ul>
-            <li>Mathis Beaussier</li>
-            <li>Marina Chea</li>
-            <li>Andréa Rivière-Jour</li>
-            <li>Maude Roy Flament</li>
-            <li>Laureen Bertrand</li>
-          </ul>
-        </div>
-        <div class="footer-nav-column">
-          <p class="footer-column-heading">MISSION</p>
-          <ul>
-            <li>Programme AURORA</li>
-            <li>Odyssey IV</li>
-            <li>Kepler-452c</li>
-            <li>CCA — 2079</li>
-          </ul>
+          <a href="#" class="btn-lire-transmission">LIRE →</a>
         </div>
       </div>
-      <div class="footer-legal-bar">
-        <p>VIZ·ION // CCA // MISSION AURORA // 2079 — DIFFUSION RESTREINTE</p>
-        <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content-grid">
+      <div>
+        <p class="footer-brand-logo-text">VIZ<span>·</span>ION</p>
+        <p class="footer-brand-description">
+          Cellule communication officielle du Centre de Contrôle Aurora —
+          Mission AURORA 2079.
+        </p>
       </div>
-    </footer>
-  </body>
+      <div class="footer-nav-column">
+        <p class="footer-column-heading">ÉQUIPE</p>
+        <ul>
+          <li>Mathis Beaussier</li>
+          <li>Marina Chea</li>
+          <li>Andréa Rivière-Jour</li>
+          <li>Maude Roy Flament</li>
+          <li>Laureen Bertrand</li>
+        </ul>
+      </div>
+      <div class="footer-nav-column">
+        <p class="footer-column-heading">MISSION</p>
+        <ul>
+          <li>Programme AURORA</li>
+          <li>Odyssey IV</li>
+          <li>Kepler-452c</li>
+          <li>CCA — 2079</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal-bar">
+      <p>VIZ·ION // CCA // MISSION AURORA // 2079 — DIFFUSION RESTREINTE</p>
+      <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+    </div>
+  </footer>
+</body>
+
 </html>

@@ -150,6 +150,157 @@ nav {
   display: block;
 }
 
+/* ─── ALERTE / INDICATEUR ─── */
+.alert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: linear-gradient(90deg, rgba(68,196,226,0.06), rgba(123,79,212,0.04));
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.alert-header-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alert-indicator {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(from 180deg at 50% 50%, var(--cyan), var(--purple));
+  box-shadow: 0 6px 18px rgba(68,196,226,0.08);
+}
+
+.alert-indicator-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--bg);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(68,196,226,0.6) inset;
+}
+
+.alert-titles .alert-eyebrow {
+  font-family: "Orbitron", monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+  margin: 0;
+}
+
+.alert-titles .alert-main-title {
+  font-family: "Exo 2", sans-serif;
+  font-size: 13px;
+  margin: 0;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.alert-status-badge {
+  font-family: "Orbitron", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+  background: rgba(255,255,255,0.02);
+  padding: 6px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alert-status-badge.confidentiel {
+  color: #ff7b7b;
+  border: 1px solid rgba(255,123,123,0.08);
+  background: linear-gradient(180deg, rgba(255,123,123,0.02), rgba(255,123,123,0.01));
+}
+
+/* Responsive: simplifier l'alerte sur petits écrans */
+@media (max-width: 880px) {
+  .navbar-menu-links {
+    display: none;
+  }
+  .navbar-hamburger-btn {
+    display: flex;
+  }
+  .alert-titles {
+    display: none;
+  }
+  .alert-indicator {
+    width: 22px;
+    height: 22px;
+  }
+  .alert-status-badge {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+}
+
+/* Bannière centrée au milieu de l'écran */
+.alert-banner {
+  position: fixed;
+  top: 60px; /* directly under the nav */
+  left: 0;
+  right: 0;
+  transform: none;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  border-radius: 0;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, rgba(68,196,226,0.04), rgba(123,79,212,0.03));
+}
+
+.alert-banner .alert-header-left {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Remet le padding du héros par défaut */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 2rem 4rem; /* espace pour nav + bannière */
+}
+
+@media (max-width: 880px) {
+  .alert-banner {
+    padding: 6px 0;
+  }
+  .alert-banner .alert-header-left {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .alert-titles {
+    display: none;
+  }
+  .hero {
+    padding-top: 140px;
+  }
+}
 .hero-buttons-wrapper {
   display: flex;
   gap: 1rem;

@@ -28,3 +28,11 @@ section p
     margin: 6px;
     
 }
+title{
+  font-family: "Orbitron", monospace;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
