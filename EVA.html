@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIZ·ION — Suivi EVA // Lt. Laurent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="eva.css" />   
+  
+</head>
+<body>
+  <div class="bg-starfield"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="navbar-brand-logo">VIZ<span>·</span>ION</a>
+    <ul class="navbar-menu-links" id="navbar-menu-links">
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="index.html#mission">Mission</a></li>
+      <li><a href="index.html#transmissions">Transmissions</a></li>
+      <li><a href="eva.html" style="color:var(--cyan)">EVA</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <span class="navbar-live-badge">● EN DIRECT</span>
+      <div class="navbar-hamburger-btn" id="hamburger"
+        onclick="document.getElementById('navbar-menu-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="eva-hero">
+
+    <!-- TOP BAR -->
+    <div class="eva-top-bar">
+      <div class="eva-top-left">
+        <span class="eva-ref">EVA-01 // ODYSSEY IV // SECTEUR-7 // 25.05.2079</span>
+        <h1 class="eva-title">Suivi EVA — <span>Lt. A. Laurent</span></h1>
+      </div>
+      <div class="eva-status-pill en-cours" id="eva-status-pill">
+        <div class="eva-status-dot"></div>
+        <span id="eva-status-text">EVA EN COURS</span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="eva-stats">
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Durée écoulée</span>
+        <span class="eva-timer" id="eva-timer">01:42:17</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Secteur actif</span>
+        <span class="eva-stat-value cyan">SECTEUR-7</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">O₂ restant</span>
+        <span class="eva-stat-value yellow">74%</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Pression comb.</span>
+        <span class="eva-stat-value green">NOMINALE</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Distance base</span>
+        <span class="eva-stat-value">340 m</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Temp. surface</span>
+        <span class="eva-stat-value">-12°C</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Signal</span>
+        <span class="eva-stat-value green">98.7%</span>
+      </div>
+      <div class="eva-stat-cell">
+        <span class="eva-stat-label">Échantillons</span>
+        <span class="eva-stat-value cyan">3 / 6</span>
+      </div>
+    </div>
+
+    <!-- GRID : MAP + FEED -->
+    <div class="eva-grid">
+
+      <!-- MAP -->
+      <div class="eva-map-container">
+        <div class="eva-map-header">
+          <span>CARTE SECTEUR-7 // KEPLER-452c</span>
+          <span class="eva-map-live">● LIVE</span>
+        </div>
+        <div class="eva-map-canvas">
+          <svg class="eva-map-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fond -->
+            <rect width="800" height="520" fill="#040d1a"/>
+
+            <!-- Grille -->
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(68,196,226,0.06)" stroke-width="1"/>
+              </pattern>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <rect width="800" height="520" fill="url(#grid)"/>
+
+            <!-- Formations rocheuses -->
+            <ellipse cx="120" cy="100" rx="80" ry="45" fill="rgba(30,50,80,0.6)" stroke="rgba(68,196,226,0.1)" stroke-width="1"/>
+            <ellipse cx="650" cy="80" rx="100" ry="55" fill="rgba(30,50,80,0.5)" stroke="rgba(68,196,226,0.08)" stroke-width="1"/>
+            <ellipse cx="700" cy="380" rx="70" ry="40" fill="rgba(30,50,80,0.5)" stroke="rgba(68,196,226,0.08)" stroke-width="1"/>
+            <ellipse cx="100" cy="400" rx="90" ry="50" fill="rgba(30,50,80,0.6)" stroke="rgba(68,196,226,0.1)" stroke-width="1"/>
+            <ellipse cx="400" cy="460" rx="120" ry="35" fill="rgba(30,50,80,0.4)" stroke="rgba(68,196,226,0.07)" stroke-width="1"/>
+
+            <!-- Labels formations -->
+            <text x="120" y="104" text-anchor="middle" font-family="monospace" font-size="8" fill="rgba(68,196,226,0.3)">FORMATION-A</text>
+            <text x="650" y="84" text-anchor="middle" font-family="monospace" font-size="8" fill="rgba(68,196,226,0.3)">FORMATION-B</text>
+            <text x="700" y="384" text-anchor="middle" font-family="monospace" font-size="8" fill="rgba(68,196,226,0.3)">FORMATION-C</text>
+
+            <!-- Zone secteur 7 -->
+            <rect x="180" y="130" width="440" height="280" rx="4"
+              fill="rgba(68,196,226,0.03)" stroke="rgba(68,196,226,0.2)" stroke-width="1" stroke-dasharray="6 4"/>
+            <text x="190" y="148" font-family="monospace" font-size="9" fill="rgba(68,196,226,0.4)">SECTEUR-7</text>
+
+            <!-- Points de collecte -->
+            <circle cx="280" cy="220" r="8" fill="rgba(74,222,128,0.15)" stroke="#4ade80" stroke-width="1.5"/>
+            <circle cx="280" cy="220" r="3" fill="#4ade80"/>
+            <text x="294" y="218" font-family="monospace" font-size="8" fill="#4ade80">S-01 ✓</text>
+
+            <circle cx="370" cy="260" r="8" fill="rgba(74,222,128,0.15)" stroke="#4ade80" stroke-width="1.5"/>
+            <circle cx="370" cy="260" r="3" fill="#4ade80"/>
+            <text x="384" y="258" font-family="monospace" font-size="8" fill="#4ade80">S-02 ✓</text>
+
+            <circle cx="460" cy="230" r="8" fill="rgba(74,222,128,0.15)" stroke="#4ade80" stroke-width="1.5"/>
+            <circle cx="460" cy="230" r="3" fill="#4ade80"/>
+            <text x="474" y="228" font-family="monospace" font-size="8" fill="#4ade80">S-03 ✓</text>
+
+            <circle cx="520" cy="300" r="8" fill="rgba(251,191,36,0.1)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <text x="534" y="298" font-family="monospace" font-size="8" fill="rgba(251,191,36,0.6)">S-04</text>
+
+            <circle cx="350" cy="350" r="8" fill="rgba(251,191,36,0.1)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <text x="364" y="348" font-family="monospace" font-size="8" fill="rgba(251,191,36,0.6)">S-05</text>
+
+            <circle cx="250" cy="320" r="8" fill="rgba(251,191,36,0.1)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <text x="264" y="318" font-family="monospace" font-size="8" fill="rgba(251,191,36,0.6)">S-06</text>
+
+            <!-- Tracé parcours -->
+            <polyline points="400,180 320,200 280,220 330,240 370,260 415,245 460,230 490,265 520,300"
+              fill="none" stroke="rgba(68,196,226,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+            <!-- Base (Odyssey IV) -->
+            <rect x="370" y="160" width="60" height="36" rx="3"
+              fill="rgba(123,79,212,0.15)" stroke="#7b4fd4" stroke-width="1.5"/>
+            <text x="400" y="174" text-anchor="middle" font-family="monospace" font-size="7" fill="#a78bfa">ODYSSEY IV</text>
+            <text x="400" y="186" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(167,139,250,0.6)">BASE</text>
+
+            <!-- Position actuelle Lt. Laurent (animée) -->
+            <g filter="url(#glow)">
+              <circle cx="520" cy="300" r="14" fill="rgba(68,196,226,0.1)" stroke="rgba(68,196,226,0.3)" stroke-width="1">
+                <animate attributeName="r" values="14;20;14" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="520" cy="300" r="5" fill="#44c4e2"/>
+              <text x="536" y="292" font-family="monospace" font-size="9" fill="#44c4e2" font-weight="bold">LT. LAURENT</text>
+            </g>
+
+            <!-- Légende -->
+            <rect x="10" y="465" width="200" height="48" rx="2" fill="rgba(4,8,33,0.8)" stroke="rgba(68,196,226,0.1)" stroke-width="1"/>
+            <circle cx="24" cy="476" r="4" fill="#4ade80"/><text x="33" y="479" font-family="monospace" font-size="8" fill="#4ade80">Échantillon collecté</text>
+            <circle cx="24" cy="492" r="4" fill="none" stroke="rgba(251,191,36,0.6)" stroke-width="1" stroke-dasharray="2 1"/><text x="33" y="495" font-family="monospace" font-size="8" fill="rgba(251,191,36,0.6)">Cible à atteindre</text>
+            <circle cx="24" cy="508" r="4" fill="#44c4e2"/><text x="33" y="511" font-family="monospace" font-size="8" fill="#44c4e2">Position actuelle</text>
+
+            <!-- Coordonnées -->
+            <text x="790" y="515" text-anchor="end" font-family="monospace" font-size="8" fill="rgba(68,196,226,0.3)">KPL-452c // 38.4°N 112.7°E</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- FEED -->
+      <div class="eva-feed">
+        <div class="eva-feed-header">
+          <span>FIL DE MISES À JOUR</span>
+        </div>
+        <div class="eva-feed-list" id="eva-feed-list">
+          <div class="feed-item warn">
+            <span class="feed-time">14:32</span>
+            <span class="feed-text"><strong>ALERTE O₂</strong> — Consommation légèrement supérieure à la normale. Surveillance active.</span>
+          </div>
+          <div class="feed-item ok">
+            <span class="feed-time">14:28</span>
+            <span class="feed-text"><strong>S-03 collecté</strong> — Échantillon rocheux sédimentaire, composition inconnue. Mis en sac.</span>
+          </div>
+          <div class="feed-item info">
+            <span class="feed-time">14:15</span>
+            <span class="feed-text">Déplacement vers <strong>FORMATION-C</strong>. Signal nominal à 98.7%.</span>
+          </div>
+          <div class="feed-item ok">
+            <span class="feed-time">13:58</span>
+            <span class="feed-text"><strong>S-02 collecté</strong> — Cristaux bleutés détectés, potentiellement minéraux hydratés.</span>
+          </div>
+          <div class="feed-item info">
+            <span class="feed-time">13:44</span>
+            <span class="feed-text">Température externe stable à <strong>-12°C</strong>. Aucune anomalie météo.</span>
+          </div>
+          <div class="feed-item ok">
+            <span class="feed-time">13:31</span>
+            <span class="feed-text"><strong>S-01 collecté</strong> — Premier échantillon de surface. Texture ocre granuleuse.</span>
+          </div>
+          <div class="feed-item info">
+            <span class="feed-time">13:20</span>
+            <span class="feed-text">Entrée en <strong>SECTEUR-7</strong>. Visibilité optimale. Contact radio établi.</span>
+          </div>
+          <div class="feed-item info">
+            <span class="feed-time">13:10</span>
+            <span class="feed-text"><strong>EVA INITIÉE</strong> — Lt. Laurent sort de l'Odyssey IV. Tous systèmes nominaux.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- DATA / IMAGES -->
+<div class="eva-data-section">
+  <div class="eva-data-header">
+    <span>DONNÉES & IMAGES — COLLECTE EN COURS</span>
+    <span style="color:var(--gray);font-family:'Orbitron',monospace;font-size:9px;letter-spacing:0.1em;">3 / 6 POINTS</span>
+  </div>
+  <div class="eva-data-grid">
+
+    <div class="eva-data-card">
+      <span class="eva-data-card-label">S-01 // ÉCHANTILLON ROCHEUX</span>
+      <img src="images/rocher_k.png" alt="Échantillon rocheux" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:3px;">
+      <p class="eva-data-card-desc">Roche ocre à texture granuleuse. Composition primaire inconnue, analyse en cours au laboratoire bord.</p>
+      <span class="eva-data-card-meta">13:31 UTC · SECTEUR-7 · COORD. 38.1°N 112.3°E</span>
+    </div>
+
+    <div class="eva-data-card">
+      <span class="eva-data-card-label">S-02 // CRISTAUX BLEUTÉS</span>
+      <img src="images/petitscristaux_.png" alt="Cristaux bleutés" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:3px;">
+      <p class="eva-data-card-desc">Cristaux translucides aux reflets bleutés. Hypothèse : minéraux hydratés — biosignature possible.</p>
+      <span class="eva-data-card-meta">13:58 UTC · SECTEUR-7 · COORD. 38.2°N 112.5°E</span>
+    </div>
+
+    <div class="eva-data-card">
+      <span class="eva-data-card-label">S-03 // SÉDIMENT STRATIFIÉ</span>
+      <img src="images/EVA_focus.png" alt="Sédiment stratifié" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:3px;">
+      <p class="eva-data-card-desc">Couches sédimentaires distinctes visibles. Suggère une activité géologique ancienne et répétée.</p>
+      <span class="eva-data-card-meta">14:28 UTC · SECTEUR-7 · COORD. 38.3°N 112.6°E</span>
+    </div>
+
+        <div class="eva-data-card" style="opacity:0.4;">
+          <span class="eva-data-card-label">S-04 // EN ATTENTE</span>
+          <div class="eva-data-card-placeholder">
+            <span>NON COLLECTÉ</span>
+          </div>
+          <p class="eva-data-card-desc">Point de collecte cible. Accès prévu dans les 20 prochaines minutes.</p>
+          <span class="eva-data-card-meta">— · SECTEUR-7 · COORD. 38.4°N 112.8°E</span>
+        </div>
+
+        <div class="eva-data-card" style="opacity:0.4;">
+          <span class="eva-data-card-label">S-05 // EN ATTENTE</span>
+          <div class="eva-data-card-placeholder">
+            <span>NON COLLECTÉ</span>
+          </div>
+          <p class="eva-data-card-desc">Zone d'intérêt géologique identifiée par Dr. Patel. Priorité haute.</p>
+          <span class="eva-data-card-meta">— · SECTEUR-7 · COORD. 38.5°N 112.5°E</span>
+        </div>
+
+        <div class="eva-data-card" style="opacity:0.4;">
+          <span class="eva-data-card-label">S-06 // EN ATTENTE</span>
+          <div class="eva-data-card-placeholder">
+            <span>NON COLLECTÉ</span>
+          </div>
+          <p class="eva-data-card-desc">Dernier point de collecte du parcours. Retour base prévu après prélèvement.</p>
+          <span class="eva-data-card-meta">— · SECTEUR-7 · COORD. 38.3°N 112.2°E</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content-grid">
+      <div>
+        <p class="footer-brand-logo-text">VIZ<span>·</span>ION</p>
+        <p class="footer-brand-description">Cellule communication officielle du Centre de Contrôle Aurora — Mission AURORA 2079.</p>
+      </div>
+      <div class="footer-nav-column">
+        <p class="footer-column-heading">NAVIGATION</p>
+        <ul>
+          <li><a href="index.html" style="color:var(--gray);text-decoration:none;">Accueil</a></li>
+          <li><a href="journal.html" style="color:var(--gray);text-decoration:none;">Journal de bord</a></li>
+          <li><a href="eva.html" style="color:var(--cyan);text-decoration:none;">Suivi EVA</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-column">
+        <p class="footer-column-heading">MISSION</p>
+        <ul>
+          <li>Programme AURORA</li>
+          <li>Odyssey IV</li>
+          <li>Kepler-452c</li>
+          <li>CCA — 2079</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal-bar">
+      <p>VIZ·ION // CCA // MISSION AURORA // 2079 — DIFFUSION RESTREINTE</p>
+      <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+    </div>
+  </footer>
+
+  <script>
+    // Timer EVA
+    let seconds = 6137;
+    function updateTimer() {
+      seconds++;
+      const h = String(Math.floor(seconds / 3600)).padStart(2, '0');
+      const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      const s = String(seconds % 60).padStart(2, '0');
+      const el = document.getElementById('eva-timer');
+      if (el) el.textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

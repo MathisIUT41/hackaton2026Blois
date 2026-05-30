@@ -1,0 +1,332 @@
+/* ─── NOVA OVERLAY ─── */
+.nova-overlay {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 60% 20%, rgba(123,79,212,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(68,196,226,0.05) 0%, transparent 50%);
+}
+
+/* ─── HERO ─── */
+.nova-hero {
+  position: relative; z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(167,139,250,0.15);
+}
+
+.nova-hero-inner { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.nova-protocol-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "Orbitron", monospace;
+  font-size: 9px; letter-spacing: 0.2em;
+  color: #a78bfa;
+  background: rgba(123,79,212,0.08);
+  border: 1px solid rgba(167,139,250,0.3);
+  padding: 6px 14px; border-radius: 2px;
+  width: fit-content;
+}
+
+.nova-protocol-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #a78bfa;
+  animation: pulse 1.5s infinite;
+}
+
+.nova-main-title {
+  font-family: "Orbitron", monospace;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+}
+.nova-main-title span { color: #a78bfa; }
+
+.nova-subtitle {
+  font-family: "Orbitron", monospace;
+  font-size: 10px; letter-spacing: 0.2em;
+  color: var(--gray);
+}
+
+.nova-intro {
+  font-size: 15px; color: var(--gray);
+  line-height: 1.8; max-width: 580px;
+}
+.nova-intro strong { color: var(--white); font-weight: 500; }
+
+.nova-cycle-counter {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(123,79,212,0.06);
+  border: 1px solid rgba(167,139,250,0.15);
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.nova-cycle-label {
+  font-family: "Orbitron", monospace;
+  font-size: 8px; letter-spacing: 0.2em; color: var(--gray);
+}
+
+.nova-cycle-value {
+  font-family: "Orbitron", monospace;
+  font-size: 18px; font-weight: 700; color: var(--cyan);
+}
+
+/* ─── VISUAL ─── */
+.nova-visual { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+
+.nova-crystal-svg { width: 100%; max-width: 280px; }
+
+.nova-visual-caption {
+  font-family: "Orbitron", monospace;
+  font-size: 8px; letter-spacing: 0.15em;
+  color: rgba(167,139,250,0.4);
+  text-align: center;
+}
+
+/* ─── CONTENT ─── */
+.nova-content {
+  position: relative; z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.nova-section { padding: 4rem 0; border-bottom: 1px solid rgba(167,139,250,0.08); }
+.nova-section:last-child { border-bottom: none; }
+
+.nova-timeline {
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.nova-timeline::before {
+  content: '';
+  position: absolute; left: 7px; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, var(--cyan), #7b4fd4, transparent);
+}
+
+.nova-tl-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.nova-tl-dot {
+  position: absolute;
+  left: -1.75rem; top: 1.75rem;
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid;
+}
+.nova-tl-dot.cyan  { background: var(--bg); border-color: var(--cyan); }
+.nova-tl-dot.purple { background: var(--bg); border-color: #a78bfa; }
+.nova-tl-dot.blink { animation: pulse 1.5s infinite; background: #a78bfa; }
+
+.nova-tl-highlight {
+  background: rgba(123,79,212,0.04);
+  border-radius: 4px;
+  padding-left: 1rem;
+  margin-left: -1rem;
+  border: 1px solid rgba(167,139,250,0.1);
+}
+
+.nova-tl-time {
+  font-family: "Orbitron", monospace;
+  font-size: 10px; color: var(--cyan);
+  letter-spacing: 0.1em;
+  padding-top: 3px;
+  white-space: nowrap;
+}
+
+.nova-tl-title {
+  font-family: "Orbitron", monospace;
+  font-size: 13px; font-weight: 700; color: var(--white);
+  margin-bottom: 6px; letter-spacing: 0.03em;
+}
+
+.nova-tl-desc {
+  font-size: 13px; color: var(--gray); line-height: 1.7;
+}
+.nova-tl-desc strong { color: var(--white); font-weight: 500; }
+
+.nova-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: rgba(167,139,250,0.08);
+  border: 1px solid rgba(167,139,250,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.nova-data-card {
+  background: var(--bg-card);
+  padding: 1.75rem;
+  display: flex; flex-direction: column; gap: 8px;
+  border-top: 3px solid transparent;
+  transition: border-color 0.3s;
+}
+.nova-data-card:hover { border-top-color: #a78bfa; }
+
+.nova-data-num {
+  font-family: "Orbitron", monospace;
+  font-size: 2rem; font-weight: 900;
+  line-height: 1;
+}
+.nova-data-num.cyan   { color: var(--cyan); }
+.nova-data-num.purple { color: #a78bfa; }
+
+.nova-data-label {
+  font-family: "Orbitron", monospace;
+  font-size: 9px; letter-spacing: 0.15em;
+  color: var(--gray); text-transform: uppercase;
+}
+
+.nova-data-desc {
+  font-size: 13px; color: var(--gray); line-height: 1.6;
+  margin-top: 4px;
+}
+
+.nova-visuals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.nova-visual-slot { display: flex; flex-direction: column; gap: 8px; }
+
+.nova-visual-placeholder {
+  aspect-ratio: 16/9;
+  background: rgba(123,79,212,0.04);
+  border: 1px dashed rgba(167,139,250,0.2);
+  border-radius: 4px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+  transition: border-color 0.3s, background 0.3s;
+}
+.nova-visual-placeholder:hover {
+  border-color: rgba(167,139,250,0.4);
+  background: rgba(123,79,212,0.08);
+}
+
+.nova-ph-icon {
+  font-size: 24px; color: rgba(167,139,250,0.3);
+  animation: pulse 3s infinite;
+}
+
+.nova-ph-label {
+  font-family: "Orbitron", monospace;
+  font-size: 9px; letter-spacing: 0.2em; color: rgba(167,139,250,0.5);
+}
+
+.nova-ph-sub {
+  font-size: 11px; color: var(--gray); text-align: center; padding: 0 1rem;
+}
+
+.nova-visual-slot-cap {
+  font-family: "Orbitron", monospace;
+  font-size: 8px; letter-spacing: 0.1em;
+  color: rgba(167,139,250,0.3);
+}
+
+.nova-faq { display: flex; flex-direction: column; gap: 0; }
+
+.nova-faq-item {
+  border-bottom: 1px solid rgba(167,139,250,0.1);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nova-faq-item:first-child { border-top: 1px solid rgba(167,139,250,0.1); }
+.nova-faq-item:hover { background: rgba(123,79,212,0.03); }
+
+.nova-faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 0.5rem;
+  gap: 1rem;
+}
+
+.nova-faq-q span:first-child {
+  font-family: "Orbitron", monospace;
+  font-size: 13px; font-weight: 500; color: var(--white);
+  letter-spacing: 0.02em; line-height: 1.4;
+}
+
+.nova-faq-arrow {
+  font-size: 20px; color: #a78bfa;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.nova-faq-item.open .nova-faq-arrow { transform: rotate(90deg); }
+
+.nova-faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.nova-faq-item.open .nova-faq-a { max-height: 300px; }
+
+.nova-faq-a p {
+  font-size: 14px; color: var(--gray); line-height: 1.8;
+  padding: 0 0.5rem 1.25rem;
+}
+
+.nova-updates { display: flex; flex-direction: column; gap: 12px; }
+
+.nova-update-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(167,139,250,0.1);
+  border-left: 3px solid #a78bfa;
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+}
+.nova-update-card.pending {
+  opacity: 0.5;
+  border-left-color: rgba(167,139,250,0.3);
+}
+
+.nova-update-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 6px;
+}
+
+.nova-update-time {
+  font-family: "Orbitron", monospace;
+  font-size: 9px; letter-spacing: 0.15em; color: var(--gray);
+}
+
+.nova-update-badge {
+  font-family: "Orbitron", monospace;
+  font-size: 8px; letter-spacing: 0.15em;
+  color: #a78bfa;
+  background: rgba(123,79,212,0.1);
+  border: 1px solid rgba(167,139,250,0.3);
+  padding: 2px 8px; border-radius: 2px;
+}
+.nova-update-badge.pending { color: var(--gray); background: transparent; border-color: rgba(136,153,170,0.2); }
+
+.nova-update-title {
+  font-family: "Orbitron", monospace;
+  font-size: 13px; font-weight: 700; color: var(--white);
+  margin-bottom: 4px; letter-spacing: 0.02em;
+}
+
+.nova-update-desc {
+  font-size: 12px; color: var(--gray); line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .nova-hero { grid-template-columns: 1fr; padding-top: 90px; }
+  .nova-visual { display: none; }
+  .nova-tl-item { grid-template-columns: 70px 1fr; }
+  .nova-content { padding: 0 1.25rem 3rem; }
+}

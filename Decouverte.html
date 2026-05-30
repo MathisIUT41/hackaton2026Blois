@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIZ·ION — PROTOCOLE NOVA // Anomalie Secteur-7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="Decouverte.css" />
+</head>
+<body>
+  <div class="bg-starfield"></div>
+
+  <!-- GLITCH OVERLAY NOVA -->
+  <div class="nova-overlay"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="navbar-brand-logo">VIZ<span>·</span>ION</a>
+    <ul class="navbar-menu-links" id="navbar-menu-links">
+        <li><a href="Decouverte.html">Découverte</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="index.html#mission">Mission</a></li>
+      <li><a href="eva.html">EVA</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <span class="navbar-live-badge" style="border-color:#a78bfa;color:#a78bfa;">● PROTOCOLE ACTIF</span>
+      <div class="navbar-hamburger-btn" id="hamburger"
+        onclick="document.getElementById('navbar-menu-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO NOVA -->
+  <div class="nova-hero">
+    <div class="nova-hero-inner">
+      <div class="nova-protocol-badge">
+        <span class="nova-protocol-dot"></span>
+        PROTOCOLE NOVA ACTIVÉ — DIFFUSION CONTRÔLÉE
+      </div>
+      <h1 class="nova-main-title">
+        ANOMALIE<br/><span>SECTEUR&#x2011;7</span>
+      </h1>
+      <p class="nova-subtitle">STRUCTURE D'ORIGINE INCONNUE · KEPLER-452c · 25.05.2079 · 11H47 UTC</p>
+      <p class="nova-intro">
+        Ce matin, lors de la première sortie extravéhiculaire de la Mission AURORA, le Lt. Laurent et la Spc. Wong ont procédé à la collecte d'échantillons dans le Secteur-7. À 11h47 UTC, ils ont localisé la source du signal électromagnétique détecté en début de journée. Ce qui a été découvert constitue une <strong>découverte scientifique majeure</strong> sans précédent dans l'histoire de l'exploration spatiale.
+      </p>
+      <div class="nova-cycle-counter">
+        <span class="nova-cycle-label">CYCLE LUMINEUX</span>
+        <span class="nova-cycle-value" id="nova-cycle">47s</span>
+        <span class="nova-cycle-label">CHAMP EM</span>
+        <span class="nova-cycle-value" style="color:#a78bfa">ACTIF</span>
+      </div>
+    </div>
+
+    <!-- Visualisation structure -->
+    <div class="nova-visual">
+      <svg viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg" class="nova-crystal-svg">
+        <defs>
+          <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#7b4fd4" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#44c4e2" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#44c4e2" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="crystalGlow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Halo de base -->
+        <ellipse cx="160" cy="360" rx="90" ry="18" fill="url(#glow1)" opacity="0.5">
+          <animate attributeName="opacity" values="0.3;0.7;0.3" dur="47s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- Sol -->
+        <ellipse cx="160" cy="362" rx="60" ry="10" fill="rgba(123,79,212,0.15)" stroke="rgba(167,139,250,0.2)" stroke-width="1"/>
+
+        <!-- Structure cristalline centrale -->
+        <polygon points="160,60 140,200 180,200" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1.5" filter="url(#crystalGlow)">
+          <animate attributeName="fill-opacity" values="0.1;0.4;0.1" dur="47s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="160,60 180,200 200,180 175,100" fill="rgba(123,79,212,0.2)" stroke="#7b4fd4" stroke-width="1">
+          <animate attributeName="fill-opacity" values="0.15;0.5;0.15" dur="47s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="160,60 140,200 120,180 145,100" fill="rgba(68,196,226,0.1)" stroke="#44c4e2" stroke-width="0.5">
+          <animate attributeName="fill-opacity" values="0.05;0.25;0.05" dur="47s" repeatCount="indefinite"/>
+        </polygon>
+
+        <!-- Cristaux secondaires -->
+        <polygon points="130,180 118,270 142,270" fill="rgba(167,139,250,0.1)" stroke="#a78bfa" stroke-width="1">
+          <animate attributeName="fill-opacity" values="0.05;0.3;0.05" dur="47s" begin="5s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="190,170 178,280 202,280" fill="rgba(68,196,226,0.1)" stroke="#44c4e2" stroke-width="1">
+          <animate attributeName="fill-opacity" values="0.05;0.25;0.05" dur="47s" begin="10s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="110,200 100,300 122,300" fill="rgba(123,79,212,0.08)" stroke="#7b4fd4" stroke-width="0.8">
+          <animate attributeName="fill-opacity" values="0.03;0.2;0.03" dur="47s" begin="15s" repeatCount="indefinite"/>
+        </polygon>
+
+        <!-- Lignes EM -->
+        <line x1="160" y1="60" x2="40" y2="20" stroke="rgba(167,139,250,0.2)" stroke-width="0.5" stroke-dasharray="3 4">
+          <animate attributeName="opacity" values="0;0.6;0" dur="47s" repeatCount="indefinite"/>
+        </line>
+        <line x1="160" y1="60" x2="280" y2="30" stroke="rgba(68,196,226,0.2)" stroke-width="0.5" stroke-dasharray="3 4">
+          <animate attributeName="opacity" values="0;0.5;0" dur="47s" begin="8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="160" y1="60" x2="60" y2="120" stroke="rgba(167,139,250,0.15)" stroke-width="0.5" stroke-dasharray="2 5">
+          <animate attributeName="opacity" values="0;0.4;0" dur="47s" begin="16s" repeatCount="indefinite"/>
+        </line>
+
+        <!-- Point lumineux sommet -->
+        <circle cx="160" cy="60" r="6" fill="#a78bfa" filter="url(#crystalGlow)">
+          <animate attributeName="r" values="4;10;4" dur="47s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="47s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Mesure hauteur -->
+        <line x1="220" y1="60" x2="220" y2="360" stroke="rgba(68,196,226,0.3)" stroke-width="0.5" stroke-dasharray="2 3"/>
+        <line x1="215" y1="60" x2="225" y2="60" stroke="rgba(68,196,226,0.4)" stroke-width="1"/>
+        <line x1="215" y1="360" x2="225" y2="360" stroke="rgba(68,196,226,0.4)" stroke-width="1"/>
+        <text x="228" y="215" font-family="monospace" font-size="9" fill="rgba(68,196,226,0.6)" transform="rotate(90,228,215)">3,2 MÈTRES</text>
+      </svg>
+      <p class="nova-visual-caption">Représentation schématique — données brutes EVA-01</p>
+    </div>
+  </div>
+
+  <div class="nova-content">
+
+    <!-- CHRONOLOGIE -->
+    <section class="nova-section">
+      <p class="section-eyebrow-label">01 // CHRONOLOGIE DE LA DÉCOUVERTE</p>
+      <h2 class="section-main-heading">Déroulé des événements</h2>
+
+      <div class="nova-timeline">
+        <div class="nova-tl-item">
+          <div class="nova-tl-dot cyan"></div>
+          <div class="nova-tl-time">09:14 UTC</div>
+          <div class="nova-tl-content">
+            <p class="nova-tl-title">Signal électromagnétique détecté</p>
+            <p class="nova-tl-desc">Les capteurs de surface de l'Odyssey IV enregistrent un champ électromagnétique faible mais stable en provenance du Secteur-7. Première anomalie signalée par la Spc. Wong.</p>
+          </div>
+        </div>
+        <div class="nova-tl-item">
+          <div class="nova-tl-dot purple"></div>
+          <div class="nova-tl-time">13:10 UTC</div>
+          <div class="nova-tl-content">
+            <p class="nova-tl-title">Début EVA-01 — Investigation</p>
+            <p class="nova-tl-desc">Le Lt. Laurent et la Spc. Wong entament leur sortie extravéhiculaire avec pour objectif secondaire la localisation de la source du signal.</p>
+          </div>
+        </div>
+        <div class="nova-tl-item">
+          <div class="nova-tl-dot cyan"></div>
+          <div class="nova-tl-time">11:47 UTC</div>
+          <div class="nova-tl-content">
+            <p class="nova-tl-title">Contact visuel — Structure localisée</p>
+            <p class="nova-tl-desc">À 340 mètres de la base, les astronautes localisent la source : une <strong>structure d'origine inconnue</strong> de 3,2 mètres de hauteur, émettant une luminescence cyclique.</p>
+          </div>
+        </div>
+        <div class="nova-tl-item nova-tl-highlight">
+          <div class="nova-tl-dot purple blink"></div>
+          <div class="nova-tl-time">11:52 UTC</div>
+          <div class="nova-tl-content">
+            <p class="nova-tl-title">Confirmation du phénomène bioluminescent</p>
+            <p class="nova-tl-desc">Les instruments confirment : cycle lumineux de <strong>47 secondes précises</strong>, champ électromagnétique actif et mesurable. Activation immédiate du Protocole NOVA par le CCA.</p>
+          </div>
+        </div>
+        <div class="nova-tl-item">
+          <div class="nova-tl-dot cyan"></div>
+          <div class="nova-tl-time">12:30 UTC</div>
+          <div class="nova-tl-content">
+            <p class="nova-tl-title">Protocole NOVA — Diffusion contrôlée activée</p>
+            <p class="nova-tl-desc">Le CCA valide la communication officielle. Vocabulaire encadré. Analyses en cours. La cellule VIZ·ION prend en charge la diffusion publique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONNÉES SCIENTIFIQUES -->
+    <section class="nova-section">
+      <p class="section-eyebrow-label">02 // DONNÉES SCIENTIFIQUES</p>
+      <h2 class="section-main-heading">Caractéristiques mesurées</h2>
+
+      <div class="nova-data-grid">
+        <div class="nova-data-card">
+          <span class="nova-data-num cyan">3,2 m</span>
+          <span class="nova-data-label">Hauteur de la structure</span>
+          <p class="nova-data-desc">Mesure effectuée par le Lt. Laurent à l'aide du télémètre laser embarqué. Structure verticale, asymétrique, base ancrée dans le substrat rocheux.</p>
+        </div>
+        <div class="nova-data-card">
+          <span class="nova-data-num purple">47 s</span>
+          <span class="nova-data-label">Cycle lumineux</span>
+          <p class="nova-data-desc">Émission de lumière strictement périodique. Cycle de 47 secondes mesuré sur 18 itérations consécutives. Aucune déviation enregistrée.</p>
+        </div>
+        <div class="nova-data-card">
+          <span class="nova-data-num cyan">~0,3 μT</span>
+          <span class="nova-data-label">Champ électromagnétique</span>
+          <p class="nova-data-desc">Intensité faible mais constante. Spectre inhabituel, non répertorié dans les bases de données géologiques connues. Corrélé au cycle lumineux.</p>
+        </div>
+        <div class="nova-data-card">
+          <span class="nova-data-num purple">Inconnue</span>
+          <span class="nova-data-label">Composition cristalline</span>
+          <p class="nova-data-desc">Structure cristalline translucide à reflets bleutés. Analyse spectroscopique en cours. Aucune correspondance dans le catalogue minéralogique terrestre.</p>
+        </div>
+      </div>
+
+      <!-- Placeholders visuels -->
+      <div class="nova-visuals-grid">
+  <div class="nova-visual-slot">
+    <img src="/images/EVA.png" alt="Vue frontale structure" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; border:1px solid rgba(167,139,250,0.2);">
+    <p class="nova-visual-slot-cap">Vue frontale · EVA-01 · 11:52 UTC</p>
+  </div>
+  <div class="nova-visual-slot">
+    <img src="images/EVA_Crystal.png" alt="Structure cristalline bioluminescente" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; border:1px solid rgba(167,139,250,0.2);">
+    <p class="nova-visual-slot-cap">Bioluminescence · Cycle actif · 11:53 UTC</p>
+  </div>
+  <div class="nova-visual-slot">
+    <img src="images/EVA_focus.png" alt="Détail cristallin macro" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; border:1px solid rgba(167,139,250,0.2);">
+    <p class="nova-visual-slot-cap">Macro structure · Spc. Wong · 12:10 UTC</p>
+  </div>
+  <div class="nova-visual-slot">
+    <div class="nova-visual-placeholder">
+      <span class="nova-ph-icon">◈</span>
+      <span class="nova-ph-label">DONNÉES À VENIR</span>
+      <span class="nova-ph-sub">Graphe champ EM · 60 min</span>
+    </div>
+    <p class="nova-visual-slot-cap">Spectre électromagnétique · CCA · En cours</p>
+  </div>
+</div>
+    <!-- FAQ -->
+    <section class="nova-section">
+      <p class="section-eyebrow-label">03 // QUESTIONS FRÉQUENTES</p>
+      <h2 class="section-main-heading">Ce que vous devez savoir</h2>
+
+      <div class="nova-faq">
+        <div class="nova-faq-item" onclick="toggleFaq(this)">
+          <div class="nova-faq-q">
+            <span>Est-ce que cette découverte est dangereuse pour l'équipage ?</span>
+            <span class="nova-faq-arrow">›</span>
+          </div>
+          <div class="nova-faq-a">
+            <p>À ce stade, aucun risque n'a été identifié pour l'équipage de l'Odyssey IV. Le champ électromagnétique mesuré est d'une intensité très faible — inférieure à celle d'un téléphone portable. Les protocoles de sécurité standard restent appliqués. L'équipage se porte bien.</p>
+          </div>
+        </div>
+
+        <div class="nova-faq-item" onclick="toggleFaq(this)">
+          <div class="nova-faq-q">
+            <span>Qu'est-ce que le Protocole NOVA ?</span>
+            <span class="nova-faq-arrow">›</span>
+          </div>
+          <div class="nova-faq-a">
+            <p>Le Protocole NOVA (Notification d'Observation Vérifiée Anomale) est un cadre de communication activé lorsqu'une découverte scientifique majeure nécessite une diffusion contrôlée et vérifiée. Il garantit que chaque information partagée avec le public est validée scientifiquement avant diffusion.</p>
+          </div>
+        </div>
+
+        <div class="nova-faq-item" onclick="toggleFaq(this)">
+          <div class="nova-faq-q">
+            <span>Que sait-on exactement sur cette structure ?</span>
+            <span class="nova-faq-arrow">›</span>
+          </div>
+          <div class="nova-faq-a">
+            <p>Nous savons que la structure mesure 3,2 mètres de hauteur, qu'elle est composée d'une matière cristalline translucide dont la composition n'est pas encore identifiée, qu'elle émet de la lumière selon un cycle de 47 secondes, et qu'elle génère un champ électromagnétique mesurable. Son origine est à ce jour inconnue et fait l'objet d'analyses approfondies.</p>
+          </div>
+        </div>
+
+        <div class="nova-faq-item" onclick="toggleFaq(this)">
+          <div class="nova-faq-q">
+            <span>Y a-t-il d'autres structures similaires dans le Secteur-7 ?</span>
+            <span class="nova-faq-arrow">›</span>
+          </div>
+          <div class="nova-faq-a">
+            <p>Pour l'instant, une seule structure a été localisée. Une exploration complémentaire du Secteur-7 et des zones adjacentes est planifiée. Les résultats seront communiqués dès validation par le Centre de Contrôle Aurora.</p>
+          </div>
+        </div>
+
+        <div class="nova-faq-item" onclick="toggleFaq(this)">
+          <div class="nova-faq-q">
+            <span>Quand aurons-nous plus d'informations ?</span>
+            <span class="nova-faq-arrow">›</span>
+          </div>
+          <div class="nova-faq-a">
+            <p>Les analyses scientifiques sont en cours à bord de l'Odyssey IV. Un premier rapport complet est attendu dans les 48 heures. La cellule VIZ·ION s'engage à publier chaque mise à jour validée dans la section dédiée ci-dessous, en temps réel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISES À JOUR FUTURES -->
+    <section class="nova-section">
+      <p class="section-eyebrow-label">04 // MISES À JOUR</p>
+      <h2 class="section-main-heading">Suivi en temps réel</h2>
+
+      <div class="nova-updates">
+        <div class="nova-update-card active">
+          <div class="nova-update-header">
+            <span class="nova-update-time">25.05.2079 · 12:30 UTC</span>
+            <span class="nova-update-badge">INITIAL</span>
+          </div>
+          <p class="nova-update-title">Activation du Protocole NOVA</p>
+          <p class="nova-update-desc">Première communication officielle validée par le CCA. Structure localisée, données préliminaires confirmées. Analyses en cours.</p>
+        </div>
+
+        <div class="nova-update-card pending">
+          <div class="nova-update-header">
+            <span class="nova-update-time">À VENIR · ~14:00 UTC</span>
+            <span class="nova-update-badge pending">EN ATTENTE</span>
+          </div>
+          <p class="nova-update-title">Résultats analyse spectroscopique</p>
+          <p class="nova-update-desc">Composition chimique de la structure. Premiers éléments communiqués par Dr. Patel.</p>
+        </div>
+
+        <div class="nova-update-card pending">
+          <div class="nova-update-header">
+            <span class="nova-update-time">À VENIR · ~18:00 UTC</span>
+            <span class="nova-update-badge pending">EN ATTENTE</span>
+          </div>
+          <p class="nova-update-title">Visuels haute résolution</p>
+          <p class="nova-update-desc">Images transmises depuis l'Odyssey IV — structure complète et détails cristallins.</p>
+        </div>
+
+        <div class="nova-update-card pending">
+          <div class="nova-update-header">
+            <span class="nova-update-time">À VENIR · J+1</span>
+            <span class="nova-update-badge pending">EN ATTENTE</span>
+          </div>
+          <p class="nova-update-title">Rapport scientifique complet</p>
+          <p class="nova-update-desc">Synthèse de l'ensemble des données collectées. Conclusions préliminaires de l'équipe scientifique.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content-grid">
+      <div>
+        <p class="footer-brand-logo-text">VIZ<span>·</span>ION</p>
+        <p class="footer-brand-description">Cellule communication officielle du Centre de Contrôle Aurora — Mission AURORA 2079.</p>
+      </div>
+      <div class="footer-nav-column">
+        <p class="footer-column-heading">NAVIGATION</p>
+        <ul>
+          <li><a href="index.html" style="color:var(--gray);text-decoration:none;">Accueil</a></li>
+          <li><a href="journal.html" style="color:var(--gray);text-decoration:none;">Journal de bord</a></li>
+          <li><a href="eva.html" style="color:var(--gray);text-decoration:none;">Suivi EVA</a></li>
+          <li><a href="nova.html" style="color:#a78bfa;text-decoration:none;">Protocole NOVA</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-column">
+        <p class="footer-column-heading">MISSION</p>
+        <ul>
+          <li>Programme AURORA</li>
+          <li>Odyssey IV</li>
+          <li>Kepler-452c</li>
+          <li>CCA — 2079</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal-bar">
+      <p>VIZ·ION // CCA // PROTOCOLE NOVA // 2079 — DIFFUSION CONTRÔLÉE</p>
+      <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+    </div>
+  </footer>
+
+  <script src="Decouverte.js"></script>
+</body>
+</html>
