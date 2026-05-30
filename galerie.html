@@ -1,52 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="galerie.css">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="galerie.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>Vizion Aurora</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <h1>Bienvenue chez Vizion Aurora</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="galerie.html">Gallerie</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="bg-starfield"></div>
+
+      <nav id="nav">
+        <a href="#" class="navbar-brand-logo">VIZ<span>·</span>ION</a>
+        <ul class="navbar-menu-links" id="navbar-menu-links">
+          <li><a href="#">Journal</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#transmissions">Transmissions</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <span class="navbar-live-badge">● EN DIRECT</span>
+          <div
+            class="navbar-hamburger-btn"
+            id="hamburger"
+            onclick="
+              document
+                .getElementById('navbar-menu-links')
+                .classList.toggle('open')
+            "
+          >
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <p class="hero-eyebrow-label">
+          // CELLULE COMMUNICATION CCA — MISSION AURORA — 2079
+        </p>
+        <h1 class="hero-main-title">
+          OPÉRATION<br /><span class="text-cyan-accent">AURORA</span>
+        </h1>
+        <p class="hero-mission-subtitle">
+          ODYSSEY IV · ORBITE KEPLER-452c · 2079
+        </p>
+        <p class="hero-description-text">
+          L'humanité a posé les yeux sur un nouveau monde. À 1 400
+          années-lumière de la Terre, l'Odyssey IV est en orbite autour de
+          Kepler-452c. La cellule VIZ·ION est la voix officielle de cette
+          mission historique.
+        </p>
+        <div class="hero-buttons-wrapper">
+          <a href="#mission" class="hero-cta-button">DÉCOUVRIR LA MISSION</a>
+          <a href="galerie.html" class="hero-cta-button"
+            >DÉCOUVRIR LA GALERIE</a
+          >
+        </div>
+      </div>
     </header>
     <main>
-        <section>
-            <img src="#">
-             <p>Image description</p>
-        </section>
-        <section>
-            <img src="#">
-             <p>Image description</p>
-        </section>
-        <section>
-            <img src="#">
-             <p>Image description</p>
-        </section>
-        <section>
-            <img src="#">
-             <p>Image description</p>
-        </section>
-        <section>
-            <img src="#">
-             <p>Image description</p>
-        </section>
-        <section>
-            <img src="#">
-             <p>Image description</p>
-        </section>
-
+      <section class="containerimg">
+        <img src="images/galerie1.png" />
+        <h1>Image title</h1>
+        <p>
+          Adipisicing irure nostrud ex consectetur officia nisi cupidatat qui ut
+          nisi amet dolor esse.
+        </p>
+      </section>
+      <section>
+        <img src="images/galerie1.png" />
+        <h1>Image title</h1>
+        <p>
+          Adipisicing irure nostrud ex consectetur officia nisi cupidatat qui ut
+          nisi amet dolor esse.
+        </p>
+      </section>
+      <section>
+        <img src="images/galerie1.png" />
+        <h1>Image title</h1>
+        <p>
+          Adipisicing irure nostrud ex consectetur officia nisi cupidatat qui ut
+          nisi amet dolor esse.
+        </p>
+      </section>
+      <section>
+        <img src="images/galerie1.png" />
+        <h1>Image title</h1>
+        <p>
+          Adipisicing irure nostrud ex consectetur officia nisi cupidatat qui ut
+          nisi amet dolor esse.
+        </p>
+      </section>
+      <section>
+        <img src="images/galerie1.png" />
+        <h1>Image title</h1>
+        <p>
+          Adipisicing irure nostrud ex consectetur officia nisi cupidatat qui ut
+          nisi amet dolor esse.
+        </p>
+      </section>
+      <section>
+        <img src="images/galerie1.png" />
+        <h1>Image title</h1>
+        <p>
+          Adipisicing irure nostrud ex consectetur officia nisi cupidatat qui ut
+          nisi amet dolor esse.
+        </p>
+      </section>
     </main>
+
+    <!-- PIED DE PAGE -->
     <footer>
-        <p>&copy; 2024 Vizion Aurora.</p>
+      <div class="footer-content-grid">
+        <div>
+          <p class="footer-brand-logo-text">VIZ<span>·</span>ION</p>
+          <p class="footer-brand-description">
+            Cellule communication officielle du Centre de Contrôle Aurora —
+            Mission AURORA 2079.
+          </p>
+        </div>
+        <div class="footer-nav-column">
+          <p class="footer-column-heading">ÉQUIPE</p>
+          <ul>
+            <li>Mathis Beaussier</li>
+            <li>Marina Chea</li>
+            <li>Andréa Rivière-Jour</li>
+            <li>Maude Roy Flament</li>
+            <li>Laureen Bertrand</li>
+          </ul>
+        </div>
+        <div class="footer-nav-column">
+          <p class="footer-column-heading">MISSION</p>
+          <ul>
+            <li>Programme AURORA</li>
+            <li>Odyssey IV</li>
+            <li>Kepler-452c</li>
+            <li>CCA — 2079</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal-bar">
+        <p>VIZ·ION // CCA // MISSION AURORA // 2079 — DIFFUSION RESTREINTE</p>
+        <p>DIRECTION ARTISTIQUE — SPATIAL TECH</p>
+      </div>
     </footer>
-</body>
+  </body>
+</html>
